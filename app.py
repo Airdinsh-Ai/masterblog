@@ -27,6 +27,7 @@ def add():
             "author": author,
             "title": title,
             "content": content,
+            "likes": 0,
         }
         add_post(blog_post)
         return redirect(url_for("index"))
