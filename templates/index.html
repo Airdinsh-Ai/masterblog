@@ -15,7 +15,8 @@
     <p><em>Written by {{ post.author }}</em></p>
     <p>{{ post.content }}</p>
     <a href="{{ url_for('delete', post_id=post.id) }}">Delete</a>
-    <a href="{{ url_for('update', post_id=post.id) }}">Edit/Update</a>
+    <a href="{{ url_for('update', post_id=post.id) }}">Update</a>
+    <a href="{{ url_for('like', post_id=post.id) }}">👍 Like ({{ post.likes }})</a>
 </div>
 {% endfor %}
 </body>

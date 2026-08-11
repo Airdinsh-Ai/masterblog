@@ -1,1 +1,30 @@
-[{"id": 1, "author": "John Doe", "title": "First Post updated", "content": "This is my first post.guzhjkgjkmfgk,fghmfghm"}, {"id": 2, "author": "Jane Doe", "title": "Second Post", "content": "This is another post."}, {"id": 4, "author": "Erdinc Arslan", "title": "New Post after Bugfix", "content": "So, da haben wir unseren ersten Eintrag \u00fcber das Formular"}]
+[
+  {
+    "id": 1,
+    "author": "John Doe",
+    "title": "First Post",
+    "content": "This is my first post.",
+    "likes": 3
+  },
+  {
+    "id": 2,
+    "author": "Jane Doe",
+    "title": "Second Post",
+    "content": "This is another post.",
+    "likes": 4
+  },
+  {
+    "id": 3,
+    "author": "Evil Ernie",
+    "title": "Third Post",
+    "content": "This is another new post.",
+    "likes": 0
+  },
+  {
+    "id": 4,
+    "author": "Erdinc Arslan",
+    "title": "New Post after Bugfix",
+    "content": "So, da haben wir unseren ersten Eintrag über das Formular",
+    "likes": 1
+  }
+]
