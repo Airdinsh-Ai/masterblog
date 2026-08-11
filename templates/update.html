@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Post</title>
+</head>
+<body>
+<form action="{{ url_for('update', post_id=post.id) }}"
+      method="POST">
+    <div class="form-example">
+        <label for="author">Enter your full name: </label>
+        <input type="text" name="author" id="author" value="{{
+  post.author }}" required/>
+    </div>
+    <br>
+    <div class="form-example">
+        <label for="title">Enter your blog title: </label>
+        <input type="text" name="title" id="title" value="{{
+  post.title }}" required/>
+    </div>
+    <br>
+    <div class="form-example">
+        <label for="content">Update or change your blog content:
+        </label>
+        <input type="text" name="content" id="content" value="{{
+  post.content }}" required/>
+    </div>
+    <br>
+    <div class="form-example">
+        <input type="submit" value="Save updated post!"/>
+    </div>
+</form>
+
+</body>
+</html>

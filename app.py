@@ -62,5 +62,37 @@ def delete_post(post_id):
         json.dump(blog_posts, file)
 
 
+def fetch_post_by_id(post_id):
+    blog_posts = load_posts()
+    for post in blog_posts:
+        if post["id"] == post_id:
+            return post
+    return None
+
+
+@app.route("/update/<int:post_id>", methods=["GET", "POST"])
+def update(post_id):
+    post = fetch_post_by_id(post_id)
+    if post is None:
+        return "Post not found", 404
+
+    if request.method == "POST":
+        post["author"] = request.form["author"]
+        post["title"] = request.form["title"]
+        post["content"] = request.form["content"]
+
+        blog_posts = load_posts()
+        for index, p in enumerate(blog_posts):
+            if p["id"] == post_id:
+                blog_posts[index] = post
+
+        with open("blog_posts.json", "w") as file:
+            json.dump(blog_posts, file)
+
+        return redirect(url_for("index"))
+
+    return render_template("update.html", post=post)
+
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
